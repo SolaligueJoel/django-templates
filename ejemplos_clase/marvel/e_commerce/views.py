@@ -25,7 +25,7 @@ class TableView(TemplateView):
     template_name = 'e-commerce/04-table.html'
 
 class FormView(TemplateView):
-    template_name = 'e_commerce/05-form.html'
+    template_name = 'e-commerce/05-form.html'
 
 class ImageView(TemplateView):
     template_name = 'e-commerce/06-images.html'

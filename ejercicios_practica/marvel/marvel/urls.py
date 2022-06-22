@@ -18,6 +18,8 @@ from django.urls import path, include
 # NOTE: importamos Templateview para darle una view a Swagger 
 from django.views.generic import TemplateView
 from rest_framework.schemas import get_schema_view
+from django.conf import settings
+from django.conf.urls.static import static
 
 description = '''
 <img src="https://lh3.googleusercontent.com/pw/AM-JKLWLct73ne_PgqQ146YMYjUgbswqg703xPZPnVImkFYwGbao5YksFGJFOlcoCJLfqIJ9_LRwFAwP9qinoEvsLx92NTOfAn54SgMLTgMvtii0r_rjneGjR53bx08OCncv4mRH4gNnpmEUuKofj59L9dAv=w1257-h103-no?authuser=0">
@@ -36,6 +38,7 @@ Donde 92937874f377a1ea17f7637ee07208622e5cb5e6 es un ejemplo del Token Key.
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('e-commerce/',include('e_commerce.api.urls')),
+    path('e-commerce/',include('e_commerce.urls')),
     path('api-docs/', TemplateView.as_view(
         template_name='swagger-ui.html',
         extra_context={'schema_url':'openapi-schema'}
@@ -45,4 +48,4 @@ urlpatterns = [
         description=description,
         version="1.0.0"
     ), name='openapi-schema'),
-]
+] 

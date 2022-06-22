@@ -4,6 +4,7 @@ from django.db import models
 # Debemos importarlo previamente:
 
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 # Create your models here.
 
@@ -32,6 +33,7 @@ class Comic(models.Model):
         Con "class Meta" podemos definir atributos de nuestras entidades como el nombre de la tabla.
         '''
         db_table = 'e_commerce_comics'
+
 
     def __str__(self):
         '''
